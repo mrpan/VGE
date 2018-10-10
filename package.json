@@ -1,0 +1,43 @@
+{
+  "name": "vge",
+  "version": "1.0.0",
+  "description": "a drawing engine",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha --recursive  --require esm ./test/**/*.js --reporter=doc  > docs/test.html",
+    "build": "webpack --config webpack.config.js  --mode production",
+    "dev": "rollup -c",
+    "serve": "npm run dev && webpack-dev-server --watch --mode development  --host 0.0.0.0 --port 10000"
+  },
+  "author": "mrpan",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/mrpan/VGE.git"
+  },
+  "bugs": {
+    "url": "https://github.com/mrpan/VGE/issues"
+  },
+  "homepage": "https://github.com/mrpan/VGE#readme",
+  "dependencies": {
+    "@babel/core": "^7.1.0",
+    "@babel/plugin-transform-runtime": "^7.1.0",
+    "@babel/preset-env": "^7.1.0",
+    "@babel/runtime": "^7.0.0",
+    "babel-loader": "^8.0.4",
+    "esm": "^3.0.84",
+    "expect.js": "^0.3.1",
+    "mocha": "^5.2.0",
+    "rollup": "^0.66.5",
+    "rollup-plugin-buble": "^0.19.4",
+    "rollup-plugin-commonjs": "^9.2.0",
+    "rollup-plugin-node-resolve": "^3.4.0",
+    "rollup-plugin-sourcemaps": "^0.4.2",
+    "rollup-plugin-uglify": "^6.0.0",
+    "webpack": "^4.20.2",
+    "webpack-dev-server": "^3.1.9"
+  },
+  "devDependencies": {
+    "webpack-cli": "^3.1.1"
+  }
+}

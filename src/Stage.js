@@ -29,7 +29,9 @@ class Stage extends BaseObject{
 			this.renderer.style.width = '100%';
 			this.renderer.style.height = '100%';
 		}else if(type=="svg"){
-			this.renderer = document.createElementNS('http://www.w3.org/2000/svg', 'svg')
+			this.renderer = document.createElementNS('http://www.w3.org/2000/svg', 'svg');
+			this.renderer.setAttribute("width", "100%");
+			this.renderer.setAttribute("height", "100%");
 		}
 		this.targetElement.appendChild(this.renderer);
 	}

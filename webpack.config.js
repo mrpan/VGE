@@ -2,14 +2,14 @@
 * @Author: giserpan
 * @Date:   2018-09-28 16:17:00
 * @Last Modified by:   giserpan
-* @Last Modified time: 2018-09-28 16:22:23
+* @Last Modified time: 2018-10-11 23:02:02
 */
 const webpack = require('webpack');
 
 const path = require('path');
 module.exports = {
   entry: {
-    'vge':'./src/index.js'
+    'vge-dev':'./src/index.js'
   },
   output: {
     path: __dirname+"/dist",

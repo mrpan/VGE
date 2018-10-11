@@ -5,9 +5,9 @@
   "main": "index.js",
   "scripts": {
     "test": "mocha --recursive  --require esm ./test/**/*.js --reporter=doc  > docs/test.html",
-    "build": "webpack --config webpack.config.js  --mode production",
-    "dev": "rollup -c",
-    "serve": "npm run dev && webpack-dev-server --watch --mode development  --host 0.0.0.0"
+    "build": "webpack --config webpack.config.js  --mode development",
+    // "dev": "rollup -c",
+    "serve": "webpack-dev-server --devtool source-map --watch --mode development  --host 0.0.0.0"
   },
   "author": "mrpan",
   "license": "MIT",

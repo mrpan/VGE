@@ -6,7 +6,7 @@ import buble from 'rollup-plugin-buble';
 export default {
   input: 'src/index.js',
   output: [
-    {file: 'dist/vge-dev.js', format: 'iife', sourcemap: true}
+    {file: 'dist/vge.js', format: 'iife', sourcemap: true}
   ],
   plugins: [
     noderesolve(),

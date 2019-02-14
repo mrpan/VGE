@@ -1,4 +1,59 @@
     <section class="suite">
+      <h1>EventTarget</h1>
+      <dl>
+        <section class="suite">
+          <h1>a unit EventTarget</h1>
+          <dl>
+            <section class="suite">
+              <h1>#addEventListener</h1>
+              <dl>
+                <dt>returns listeners_</dt>
+                <dd><pre><code>expect(eventTarget.listeners_).to.eql({&#x22;click&#x22;:[f]});</code></pre></dd>
+              </dl>
+            </section>
+            <section class="suite">
+              <h1>#dispatchEvent</h1>
+              <dl>
+this is listener
+Event {
+  type: 'click',
+  target: EventTarget { listeners_: { click: [Array] } } }
+                <dt>dispatch event </dt>
+                <dd><pre><code>expect(eventTarget.dispatchEvent(&#x22;click&#x22;)).to.be(undefined);</code></pre></dd>
+              </dl>
+            </section>
+            <section class="suite">
+              <h1>#removeEventListener</h1>
+              <dl>
+                <dt>returns listeners_</dt>
+                <dd><pre><code>eventTarget.removeEventListener(&#x22;click&#x22;,f);
+expect(eventTarget.listeners_).to.eql({});</code></pre></dd>
+              </dl>
+            </section>
+          </dl>
+        </section>
+      </dl>
+    </section>
+    <section class="suite">
+      <h1>events</h1>
+      <dl>
+        <section class="suite">
+          <h1>a unit EventTarget</h1>
+          <dl>
+            <section class="suite">
+              <h1>#listen function</h1>
+              <dl>
+                <dt>listen function</dt>
+                <dd><pre><code>let obj=listen(eventTarget,&#x22;click&#x22;,f);
+// console.log(obj)
+expect(obj.listener).to.eql(f);</code></pre></dd>
+              </dl>
+            </section>
+          </dl>
+        </section>
+      </dl>
+    </section>
+    <section class="suite">
       <h1>vge.Shape.Circle</h1>
       <dl>
         <section class="suite">

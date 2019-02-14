@@ -1,6 +1,7 @@
-import BaseObject from "./core/BaseObject"
-
-class Stage extends BaseObject{
+import BaseObject from "./core/BaseObject.js"
+import {listen} from "./core/events.js"
+import Observable from "./core/Observable.js"
+class Stage extends Observable{
 	constructor(options){
 		super();
 
@@ -13,7 +14,12 @@ class Stage extends BaseObject{
 
 		this.targetElement=null;
 		this.getTargetElement(this.target_);
-		this.createRenderer(this.rendererType_)
+		this.createRenderer(this.rendererType_);
+		listen(this.targetElement,"click",function(e){
+			console.log(e);
+			console.log("11")
+		})
+
 	}
 	getTargetElement(target){
 		if(typeof target=="string"){
@@ -34,6 +40,7 @@ class Stage extends BaseObject{
 			this.renderer.setAttribute("height", "100%");
 		}
 		this.targetElement.appendChild(this.renderer);
+
 	}
 }
 

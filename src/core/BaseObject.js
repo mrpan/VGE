@@ -1,6 +1,7 @@
 import Observable from './Observable.js';
 import {assign} from '../util.js';
 
+//inspire by https://github.com/openlayers/openlayers
 class BaseObject extends Observable {
 	constructor(opt_values) {
 		super();

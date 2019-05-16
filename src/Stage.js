@@ -32,8 +32,10 @@ class Stage extends Observable{
 	createRenderer(type){
 		if(type=="canvas"){
 			this.renderer = document.createElement('canvas');
-			this.renderer.style.width = '100%';
-			this.renderer.style.height = '100%';
+			// this.renderer.style.width = '100%';
+			// this.renderer.style.height = '100%';
+			this.renderer.width=this.targetElement.offsetWidth;
+			this.renderer.height=this.targetElement.offsetHeight;
 		}else if(type=="svg"){
 			this.renderer = document.createElementNS('http://www.w3.org/2000/svg', 'svg');
 			this.renderer.setAttribute("width", "100%");
@@ -41,6 +43,15 @@ class Stage extends Observable{
 		}
 		this.targetElement.appendChild(this.renderer);
 
+	}
+	getContext(){
+		if(this.rendererType_=="canvas"){
+			return this.renderer.getContext("2d");
+		}
+	}
+	add(shape){
+		let canvasContext=this.getContext();
+		shape.draw(canvasContext);
 	}
 }
 

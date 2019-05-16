@@ -1,8 +1,8 @@
 /*
 * @Author: giserpan
 * @Date:   2018-09-20 10:34:46
-* @Last Modified by:   giserpan
-* @Last Modified time: 2018-09-26 10:31:38
+* @Last Modified by:   mrpan
+* @Last Modified time: 2019-05-16 23:21:13
 */
 import Shape from './Shape.js';
 
@@ -38,6 +38,7 @@ class Circle extends Shape{
 		return [this.x_,this.y_];
 	}
 	draw(context){
+		context.save();
 		context.beginPath();
 		context.arc(this.x_, this.y_, 10, 0, 2 * Math.PI, false);
 		if(this.fillStyle_){
@@ -48,6 +49,7 @@ class Circle extends Shape{
 			context.strokeStyle=this.strokeStyle_;
 		}
 		context.stroke();
+		context.restore();
 	}
 }
 
